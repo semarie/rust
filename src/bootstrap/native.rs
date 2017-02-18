@@ -103,6 +103,11 @@ pub fn llvm(build: &Build, target: &str) {
         cfg.define("LLVM_BUILD_32_BITS", "ON");
     }
 
+    // propagate verbose flag to llvm build
+    if build.flags.verbose() {
+        cfg.define("CMAKE_VERBOSE_MAKEFILE", "ON");
+    }
+
     // http://llvm.org/docs/HowToCrossCompileLLVM.html
     if target != build.config.build {
         // FIXME: if the llvm root for the build triple is overridden then we

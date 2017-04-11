@@ -26,6 +26,7 @@ pub fn target() -> TargetResult {
         data_layout: "E-m:e-p:32:32-i64:64-n32".to_string(),
         arch: "powerpc".to_string(),
         target_os: "linux".to_string(),
+        target_os_version: "".to_string(),
         target_env: "gnu".to_string(),
         target_vendor: "unknown".to_string(),
         linker_flavor: LinkerFlavor::Gcc,

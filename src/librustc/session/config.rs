@@ -1038,6 +1038,7 @@ pub fn default_configuration(sess: &Session) -> ast::CrateConfig {
     let arch = &sess.target.target.arch;
     let wordsz = &sess.target.target.target_pointer_width;
     let os = &sess.target.target.target_os;
+    let os_version = &sess.target.target.target_os_version;
     let env = &sess.target.target.target_env;
     let vendor = &sess.target.target.target_vendor;
     let min_atomic_width = sess.target.target.min_atomic_width();
@@ -1046,6 +1047,7 @@ pub fn default_configuration(sess: &Session) -> ast::CrateConfig {
     let mut ret = HashSet::new();
     // Target bindings.
     ret.insert((Symbol::intern("target_os"), Some(Symbol::intern(os))));
+    ret.insert((Symbol::intern("target_os_version"), Some(Symbol::intern(os_version))));
     if let Some(ref fam) = sess.target.target.options.target_family {
         ret.insert((Symbol::intern("target_family"), Some(Symbol::intern(fam))));
         if fam == "windows" || fam == "unix" {

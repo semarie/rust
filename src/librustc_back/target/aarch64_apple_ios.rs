@@ -21,6 +21,7 @@ pub fn target() -> TargetResult {
         data_layout: "e-m:o-i64:64-i128:128-n32:64-S128".to_string(),
         arch: "aarch64".to_string(),
         target_os: "ios".to_string(),
+        target_os_version: "".to_string(),
         target_env: "".to_string(),
         target_vendor: "apple".to_string(),
         linker_flavor: LinkerFlavor::Gcc,

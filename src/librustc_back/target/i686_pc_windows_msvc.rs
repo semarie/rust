@@ -33,6 +33,7 @@ pub fn target() -> TargetResult {
         data_layout: "e-m:x-p:32:32-i64:64-f80:32-n8:16:32-a:0:32-S32".to_string(),
         arch: "x86".to_string(),
         target_os: "windows".to_string(),
+        target_os_version: "".to_string(),
         target_env: "msvc".to_string(),
         target_vendor: "pc".to_string(),
         linker_flavor: LinkerFlavor::Msvc,

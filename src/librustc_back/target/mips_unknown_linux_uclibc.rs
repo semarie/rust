@@ -19,6 +19,7 @@ pub fn target() -> TargetResult {
         data_layout: "E-m:m-p:32:32-i8:8:32-i16:16:32-i64:64-n32-S64".to_string(),
         arch: "mips".to_string(),
         target_os: "linux".to_string(),
+        target_os_version: "".to_string(),
         target_env: "uclibc".to_string(),
         target_vendor: "unknown".to_string(),
         linker_flavor: LinkerFlavor::Gcc,

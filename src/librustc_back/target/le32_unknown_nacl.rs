@@ -40,6 +40,7 @@ pub fn target() -> TargetResult {
         target_endian: "little".to_string(),
         target_pointer_width: "32".to_string(),
         target_os: "nacl".to_string(),
+        target_os_version: "".to_string(),
         target_env: "newlib".to_string(),
         target_vendor: "unknown".to_string(),
         data_layout: "e-i64:64:64-p:32:32:32-v128:32:32".to_string(),

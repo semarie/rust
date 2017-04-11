@@ -234,6 +234,8 @@ pub struct Target {
     pub target_pointer_width: String,
     /// OS name to use for conditional compilation.
     pub target_os: String,
+    /// OS Version of the OS for the Target.
+    pub target_os_version: String,
     /// Environment name to use for conditional compilation.
     pub target_env: String,
     /// Vendor name to use for conditional compilation.
@@ -531,6 +533,7 @@ impl Target {
             data_layout: get_req_field("data-layout")?,
             arch: get_req_field("arch")?,
             target_os: get_req_field("os")?,
+            target_os_version: get_opt_field("os-version", ""),
             target_env: get_opt_field("env", ""),
             target_vendor: get_opt_field("vendor", "unknown"),
             linker_flavor: LinkerFlavor::from_str(&*get_req_field("linker-flavor")?)
@@ -791,6 +794,7 @@ impl ToJson for Target {
         target_val!(target_pointer_width);
         target_val!(arch);
         target_val!(target_os, "os");
+        target_val!(target_os_version, "os_version");
         target_val!(target_env, "env");
         target_val!(target_vendor, "vendor");
         target_val!(data_layout);
